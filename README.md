@@ -1,6 +1,6 @@
-# Movies - Demo App
+# MovieFinder - Demo App
 
-Movies is using Model-View-ViewModel (MVVM) template client application architecture with modularised dependencies. Used LiveData to ensures UI matches on data state and Data Binding to display the details.
+MovieFinder is using Model-View-ViewModel (MVVM) template client application architecture with modularised dependencies. Used LiveData to ensures UI matches on data state and Data Binding to display the details.
 This is based on the Guide to app architecture article with the androidx package, Kotlin and production ready coroutine. I use several android architecture components like LiveData, ViewModel ,Room. Here are several libraries that i use:
 
 # Features
