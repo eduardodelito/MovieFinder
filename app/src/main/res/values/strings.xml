@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MovieFinder</string>
+    <string name="no_available_date">Please try to search movies.</string>
+</resources>
