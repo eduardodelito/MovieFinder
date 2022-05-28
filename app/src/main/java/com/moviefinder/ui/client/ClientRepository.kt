@@ -12,7 +12,7 @@ import java.lang.Exception
  */
 interface ClientRepository {
     fun fetchSearchMovies(apiKey: String, imdbID: String, search: String): MovieFinderResponse?
-    fun loadSelectedMovieItem(apiKey: String, imdbID: String): SelectedMovieResponse?
+    fun loadSelectedMovieItem(apiKey: String, imdbID: String, plot: String): SelectedMovieResponse?
 }
 
 class ClientRepositoryImpl(private val client: APIClient) : ClientRepository {
@@ -33,10 +33,10 @@ class ClientRepositoryImpl(private val client: APIClient) : ClientRepository {
         return null
     }
 
-    override fun loadSelectedMovieItem(apiKey: String, imdbID: String): SelectedMovieResponse? {
+    override fun loadSelectedMovieItem(apiKey: String, imdbID: String, plot: String): SelectedMovieResponse? {
         try {
             var res =
-                client.getAPIServiceInstance().fetchSelectedMovie(apiKey, imdbID).execute()
+                client.getAPIServiceInstance().fetchSelectedMovie(apiKey, imdbID, plot).execute()
             if (res.isSuccessful) {
                 return res.body()
             }

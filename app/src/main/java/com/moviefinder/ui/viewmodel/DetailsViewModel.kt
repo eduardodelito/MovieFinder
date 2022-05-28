@@ -32,7 +32,7 @@ class DetailsViewModel @Inject constructor(val clientRepository: ClientRepositor
     private suspend fun loadSelectedMovieItemFromService(imdbID: String) {
         withContext(Dispatchers.IO) {
             try {
-                val result = clientRepository.loadSelectedMovieItem(BuildConfig.API_KEY, imdbID)
+                val result = clientRepository.loadSelectedMovieItem(BuildConfig.API_KEY, imdbID, "full")
                 if (result != null) {
                     selectedMovieItemState.postValue(LoadSelectedMovieItem(result))
                 } else {

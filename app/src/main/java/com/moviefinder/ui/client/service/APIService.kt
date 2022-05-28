@@ -22,6 +22,7 @@ interface APIService {
     @GET(".")
     fun fetchSelectedMovie(
         @Query("apikey") apiKey: String,
-        @Query("i") i: String
+        @Query("i") i: String,
+        @Query("plot") plot: String
     ): Call<SelectedMovieResponse>
 }
